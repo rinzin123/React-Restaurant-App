@@ -2,12 +2,14 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import RestaurantList from "./components/RestaurantsList";
 import RestaurantCreate from "./components/RestaurantCreate";
-import RestaurantDetail from "./components/RestaurantDetail";
 import RestaurantSearch from "./components/RestaurantSearch";
 import RestaurantUpdate from "./components/RestaurantUpdate";
 import Home from "./components/Home";
 // Nav bar
 import {Navbar,Nav} from 'react-bootstrap';
+// font awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome ,faList,faPlus, faSearch} from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
@@ -19,19 +21,16 @@ function App() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link >
-                <Link to="/">Home</Link>
+                <Link to="/"><FontAwesomeIcon icon={faHome}/>Home</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="/list">Listing</Link>
+                <Link to="/list"><FontAwesomeIcon icon={faList}/>Listing </Link>
               </Nav.Link>
               <Nav.Link >
-                <Link to="/create">Create</Link>
+                <Link to="/create"><FontAwesomeIcon icon={faPlus}/>Create</Link>
               </Nav.Link>
               <Nav.Link >
-                <Link to="/update">Update</Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link to="/detail">Detail</Link>
+                <Link to="/search"><FontAwesomeIcon icon={faSearch}/>Search</Link>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -41,8 +40,6 @@ function App() {
         <Route path="/list" component={RestaurantList}>
         </Route>
         <Route path="/create" component={RestaurantCreate}>
-        </Route>
-        <Route path="/detail" component={RestaurantDetail}>
         </Route>
         <Route path="/update/:id" component={RestaurantUpdate}>
         </Route>

@@ -1,25 +1,25 @@
 {
   "restaurant": [
     {
-      "name": "Rinzin Wangmo",
-      "email": "email@rinzin.com",
+      "id": 1,
+      "name": "Kyizom Himilaya",
       "address": "Dharamshala",
       "rating": "4.0",
-      "id": 1
+      "email": "email@rinzin.com"
     },
     {
-      "name": "Tashi",
-      "email": "tashi@dfas.com",
-      "address": "address",
-      "rating": "4.1",
-      "id": 2
+      "id": 3,
+      "name": "Chousel",
+      "address": "Norbulinka",
+      "rating": "2.5",
+      "email": "adsfdf@rinzin.com"
     },
     {
-      "name": "passang",
-      "email": "dorjee@rojee.com",
-      "address": "lake side",
-      "rating": "90",
-      "id": 3
+      "name": "asdf",
+      "email": "asdf",
+      "address": "zd",
+      "rating": "89",
+      "id": 4
     }
   ]
 }

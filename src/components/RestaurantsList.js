@@ -1,7 +1,11 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+// bootstrap
 import {Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+// font awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 class RestaurantsList extends Component {
     constructor(){
         super();
@@ -9,11 +13,27 @@ class RestaurantsList extends Component {
             list:null
         }
     }
+    getData(){
+      axios.get("http://localhost:3000/restaurant")
+      .then(response=>{
+          this.setState({list:response.data})
+      });
+    }
+    // Mounted
     componentDidMount(){
-        axios.get("http://localhost:3000/restaurant")
-        .then(response=>{
-            this.setState({list:response.data})
-        });
+      this.getData()
+    }
+    // delete
+    delete(id){
+        // let confirmBox = confirm("Are you sure want to Delete!!!");
+        // if(confirmBox === true){
+              axios.delete(`http://localhost:3000/restaurant/${id}`)
+              .then(response=>{
+                this.getData();
+              })
+
+        // }
+
     }
     render() {
         return (
@@ -40,8 +60,10 @@ class RestaurantsList extends Component {
                         <td>{item.name}</td>
                         <td>{item.rating}</td>
                         <td>{item.address}</td>
-                        <td><Link to={`/update/${item.id}`}>Edit</Link></td>
-                        <td><Link to="/delete">Delete</Link></td>
+                        <td><Link to={`/update/${item.id}`}><FontAwesomeIcon icon={faEdit} color="orange"/></Link></td>
+                        <td>
+                          <span onClick={()=>this.delete(item.id)}><FontAwesomeIcon icon={faTrashAlt} color="red" /></span>
+                          </td>
                         <td><Link to="/detail">View</Link></td>
                       </tr>
                     ))}
