@@ -1,0 +1,32 @@
+{
+"restaurant":[
+    {
+        "id" :1,
+        "name" : "Tibet Kitchen",
+        "address" : "McleodGang",
+        "rating":"4.5",
+        "email":"rinzin@rinzin.com"
+    },
+    {
+        "id" :2,
+        "name" : "Tibet Kitchen",
+        "address" : "McleodGang",
+        "rating":"4.5",
+        "email":"rinzin@rinzin.com"
+    },
+    {
+        "id" :3,
+        "name" : "Tibet Kitchen",
+        "address" : "McleodGang",
+        "rating":"4.5",
+        "email":"rinzin@rinzin.com"
+    },
+    {
+        "id" :4,
+        "name" : "Tibet Kitchen",
+        "address" : "McleodGang",
+        "rating":"4.5",
+        "email":"rinzin@rinzin.com"
+    }
+]
+}
