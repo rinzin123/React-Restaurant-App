@@ -6,26 +6,51 @@ import RestaurantDetail from "./components/RestaurantDetail";
 import RestaurantSearch from "./components/RestaurantSearch";
 import RestaurantUpdate from "./components/RestaurantUpdate";
 import Home from "./components/Home";
+// Nav bar
+import {Navbar,Nav} from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/list">Listing</Link></li>
-          <li><Link to="/create">Create</Link></li>
-          <li><Link to="/search">Search</Link></li>
-          <li><Link to="/detail">Detail</Link></li>
-          <li><Link to="/update">Update</Link></li>
-        </ul>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand >Restaurant</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link >
+                <Link to="/">Home</Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="/list">Listing</Link>
+              </Nav.Link>
+              <Nav.Link >
+                <Link to="/create">Create</Link>
+              </Nav.Link>
+              <Nav.Link >
+                <Link to="/update">Update</Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="/detail">Detail</Link>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+
         {/* Route */}
-        <Route path="/list"><RestaurantList /></Route>
-        <Route path="/create"><RestaurantCreate /></Route>
-        <Route path="/detail"><RestaurantDetail /></Route>
-        <Route path="/update"><RestaurantUpdate /></Route>
-        <Route path="/search"><RestaurantSearch /></Route>
-        <Route exact path="/"><Home /></Route>
+        <Route path="/list" component={RestaurantList}>
+        </Route>
+        <Route path="/create" component={RestaurantCreate}>
+        </Route>
+        <Route path="/detail" component={RestaurantDetail}>
+        </Route>
+        <Route path="/update/:id" component={RestaurantUpdate}>
+        </Route>
+        <Route path="/search" component={RestaurantSearch}>
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
       </Router>
     </div>
   );

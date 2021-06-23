@@ -1,32 +1,25 @@
 {
-"restaurant":[
+  "restaurant": [
     {
-        "id" :1,
-        "name" : "Tibet Kitchen",
-        "address" : "McleodGang",
-        "rating":"4.5",
-        "email":"rinzin@rinzin.com"
+      "name": "Rinzin Wangmo",
+      "email": "email@rinzin.com",
+      "address": "Dharamshala",
+      "rating": "4.0",
+      "id": 1
     },
     {
-        "id" :2,
-        "name" : "Tibet Kitchen",
-        "address" : "McleodGang",
-        "rating":"4.5",
-        "email":"rinzin@rinzin.com"
+      "name": "Tashi",
+      "email": "tashi@dfas.com",
+      "address": "address",
+      "rating": "4.1",
+      "id": 2
     },
     {
-        "id" :3,
-        "name" : "Tibet Kitchen",
-        "address" : "McleodGang",
-        "rating":"4.5",
-        "email":"rinzin@rinzin.com"
-    },
-    {
-        "id" :4,
-        "name" : "Tibet Kitchen",
-        "address" : "McleodGang",
-        "rating":"4.5",
-        "email":"rinzin@rinzin.com"
+      "name": "passang",
+      "email": "dorjee@rojee.com",
+      "address": "lake side",
+      "rating": "90",
+      "id": 3
     }
-]
+  ]
 }
