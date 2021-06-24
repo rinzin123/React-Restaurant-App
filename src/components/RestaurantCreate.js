@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import NavBar from "./NavBar";
+
 class RestaurantCreate extends Component {
   constructor(){
     super();
@@ -20,21 +22,49 @@ class RestaurantCreate extends Component {
     render() {
         return (
           <div>
+            <NavBar />
+
             <h1>Restaurant Create</h1>
             <div>
-              <input onChange={(event)=>{this.setState({name:event.target.value})}} placeholder="Name"/>
-              <br/>
-              <br/>
-              <input onChange={(event)=>{this.setState({email:event.target.value})}} placeholder="Email"/>
-              <br/>
-              <br/>
-              <input onChange={(event)=>{this.setState({rating:event.target.value})}} placeholder="Rating"/>
-              <br/>
-              <br/>
-              <input onChange={(event)=>{this.setState({address:event.target.value})}} placeholder="Address"/>
-              <br/>
-              <br/>
-              <button onClick={()=>{this.create()}}>Create</button>
+              <input
+                onChange={(event) => {
+                  this.setState({ name: event.target.value });
+                }}
+                placeholder="Name"
+              />
+              <br />
+              <br />
+              <input
+                onChange={(event) => {
+                  this.setState({ email: event.target.value });
+                }}
+                placeholder="Email"
+              />
+              <br />
+              <br />
+              <input
+                onChange={(event) => {
+                  this.setState({ rating: event.target.value });
+                }}
+                placeholder="Rating"
+              />
+              <br />
+              <br />
+              <input
+                onChange={(event) => {
+                  this.setState({ address: event.target.value });
+                }}
+                placeholder="Address"
+              />
+              <br />
+              <br />
+              <button
+                onClick={() => {
+                  this.create();
+                }}
+              >
+                Create
+              </button>
             </div>
           </div>
         );

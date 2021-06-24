@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import NavBar from "./NavBar";
+
 class Login extends Component {
     constructor(){
         super();
@@ -15,6 +17,8 @@ class Login extends Component {
         // console.log(response);
         if(response.data.length>0){
             if (response.data[0].name === this.state.name && response.data.[0].password === this.state.password) {
+                //Storing the login
+                localStorage.setItem('login',JSON.stringify(response.data))
                 console.log(this.props.history.push('list'));
             }else{
                 alert("Username or Password is incorrect")
@@ -27,16 +31,38 @@ class Login extends Component {
     }
     render() {
         return (
-            <div>
-                <h4>Login</h4>
-                <input type="text" name="name" onChange={(event) =>{this.setState({name:event.target.value})}} placeholder="name"/>
-                <br/>
-                <br/>
-                <input type="password" name="password" onChange={(event) =>{this.setState({password:event.target.value})}}  placeholder="password"/>
-                <br/>
-                <br/>
-                <button onClick={()=>{this.login()}}>Login</button>
-            </div>
+          <div>
+            <NavBar />
+
+            <h4>Login</h4>
+            <input
+              type="text"
+              name="name"
+              onChange={(event) => {
+                this.setState({ name: event.target.value });
+              }}
+              placeholder="name"
+            />
+            <br />
+            <br />
+            <input
+              type="password"
+              name="password"
+              onChange={(event) => {
+                this.setState({ password: event.target.value });
+              }}
+              placeholder="password"
+            />
+            <br />
+            <br />
+            <button
+              onClick={() => {
+                this.login();
+              }}
+            >
+              Login
+            </button>
+          </div>
         );
     }
 }

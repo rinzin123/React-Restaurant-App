@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import NavBar from "./NavBar";
+
 
 class RestaurantUpdate extends Component {
   constructor() {
@@ -33,6 +35,8 @@ class RestaurantUpdate extends Component {
   render() {
     return (
       <div>
+        <NavBar />
+
         <h1>Restaurant Update</h1>
         <div>
           <input

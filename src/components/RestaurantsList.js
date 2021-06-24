@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 // bootstrap
 import {Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import NavBar from "./NavBar";
+
 // font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
@@ -38,6 +40,8 @@ class RestaurantsList extends Component {
     render() {
         return (
           <div>
+            <NavBar />
+
             <h1>Restaurants List</h1>
             {this.state.list ? (
               <div>
@@ -60,11 +64,19 @@ class RestaurantsList extends Component {
                         <td>{item.name}</td>
                         <td>{item.rating}</td>
                         <td>{item.address}</td>
-                        <td><Link to={`/update/${item.id}`}><FontAwesomeIcon icon={faEdit} color="orange"/></Link></td>
                         <td>
-                          <span onClick={()=>this.delete(item.id)}><FontAwesomeIcon icon={faTrashAlt} color="red" /></span>
-                          </td>
-                        <td><Link to="/detail">View</Link></td>
+                          <Link to={`/update/${item.id}`}>
+                            <FontAwesomeIcon icon={faEdit} color="orange" />
+                          </Link>
+                        </td>
+                        <td>
+                          <span onClick={() => this.delete(item.id)}>
+                            <FontAwesomeIcon icon={faTrashAlt} color="red" />
+                          </span>
+                        </td>
+                        <td>
+                          <Link to="/detail">View</Link>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
