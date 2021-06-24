@@ -12,7 +12,6 @@ class RestaurantCreate extends Component {
   }
   // store
   create(){
-    console.log(this.state);
     axios.post("http://localhost:3000/restaurant",this.state)
     .then(response=>{
       console.log(response);

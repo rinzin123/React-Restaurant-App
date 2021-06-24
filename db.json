@@ -1,4 +1,10 @@
 {
+  "login":[
+    {
+      "name":"rinzin",
+      "password":"rinzin"
+    }
+  ],
   "restaurant": [
     {
       "id": 1,
@@ -8,11 +14,11 @@
       "email": "email@rinzin.com"
     },
     {
-      "id": 3,
-      "name": "Chousel",
+      "name": "asdf",
+      "email": "adsfdf@rinzin.com",
       "address": "Norbulinka",
       "rating": "2.5",
-      "email": "adsfdf@rinzin.com"
+      "id": 3
     },
     {
       "name": "asdf",

@@ -5,11 +5,12 @@ import RestaurantCreate from "./components/RestaurantCreate";
 import RestaurantSearch from "./components/RestaurantSearch";
 import RestaurantUpdate from "./components/RestaurantUpdate";
 import Home from "./components/Home";
+import Login from './components/Login';
 // Nav bar
 import {Navbar,Nav} from 'react-bootstrap';
 // font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome ,faList,faPlus, faSearch} from "@fortawesome/free-solid-svg-icons";
+import { faHome ,faList,faPlus, faSearch, faUser} from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
               <Nav.Link >
                 <Link to="/search"><FontAwesomeIcon icon={faSearch}/>Search</Link>
               </Nav.Link>
+              <Nav.Link >
+                <Link to="/login"><FontAwesomeIcon icon={faUser}/>Login</Link>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -44,6 +48,8 @@ function App() {
         <Route path="/update/:id" component={RestaurantUpdate}>
         </Route>
         <Route path="/search" component={RestaurantSearch}>
+        </Route>
+        <Route path="/login" component={Login}>
         </Route>
         <Route exact path="/">
           <Home />
